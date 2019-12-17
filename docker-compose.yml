@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - .mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+
+  redis:
+    image: redis:5.0.7
+    volumes:
+      - ".redis_data:/data"
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes --requirepass foobared
+
+  web:
+    build: .
+    command: ash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/webapp
+    ports:
+      - "3000:3000"
+    links:
+      - db
+      - redis
