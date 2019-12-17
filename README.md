@@ -53,7 +53,7 @@ $ docker-compose run web rails db:create
 ```
 $ docker-compose run web ash
 ```
-NOTE: alpine has not "bash", be prepared insted of "ash"
+NOTE: alpine has not *bash*, be prepared *ash* instead of bash
 
 ### Watch the App
 Open http://localhost:3000 in your browser.
