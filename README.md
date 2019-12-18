@@ -1,4 +1,4 @@
-# Docker-RubyonRails
+# Docker-RoR6
 For begining of Ruby on Rails with Docker.
 
 #### Includes the following components:
