@@ -1,4 +1,4 @@
-FROM ruby:2.6.5-alpine
+FROM ruby:2.6.6-alpine
 
 # Install packages
 RUN apk upgrade --no-cache && \
@@ -8,6 +8,7 @@ RUN apk upgrade --no-cache && \
       git \
       nodejs \
       yarn \
+      imagemagick \
       tzdata && \
     apk add --update --no-cache --virtual=build-dependencies \
       build-base \
@@ -18,7 +19,9 @@ RUN apk upgrade --no-cache && \
       libxslt-dev \
       ruby-dev \
       yaml-dev \
-      zlib-dev
+      zlib-dev \
+      gcc \
+      g++
 
 # For 'bundle install' not run every time
 WORKDIR /tmp

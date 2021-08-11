@@ -2,8 +2,8 @@
 For begining of Ruby on Rails with Docker.
 
 #### Includes the following components:
-- Ruby 2.6.5
-- Ruby on Rails 6.0.2
+- Ruby 2.6.6
+- Ruby on Rails 6.0.3
 - Mysql 5.7
 - Redis 5.0.7
 
